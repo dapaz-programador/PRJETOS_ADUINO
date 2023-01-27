@@ -1,0 +1,165 @@
+//SEMAFARO DUAS VIAS
+// semafaro 01
+int pinVermelho = 10;
+int pinAmarelo = 9;
+int pinVerde = 8;
+int pinBotao = 7;
+int pinVerdePedestre = 2;
+int pinVermelhoPedestre = 3;
+
+int faseSemafaro;
+int estadoBotao;
+int estadoAnteriorBotao;
+
+int tempoPisca;
+int estadoPisca;
+
+// semafaro 02
+int pinVermelho02 = 13;
+int pinAmarelo02 = 12;
+int pinVerde02 = 11;
+
+int pinVerdePedestre02 = 4;
+int pinVermelhoPedestre02 = 5;
+
+int faseSemafaro02;
+
+int tempoPisca02;
+int estadoPisca02;
+
+void setup() {
+  // semafaro 01
+  pinMode(pinVermelho, OUTPUT);
+  pinMode(pinAmarelo, OUTPUT);
+  pinMode(pinVerde, OUTPUT);
+  pinMode(pinBotao, INPUT);
+  pinMode(pinVermelhoPedestre, OUTPUT);
+  pinMode(pinVerdePedestre, OUTPUT);  
+
+  faseSemafaro = 1;
+
+  estadoAnteriorBotao = digitalRead(pinBotao);
+
+  tempoPisca = 0;
+  estadoPisca = HIGH; 
+
+   // semafaro 02
+  pinMode(pinVermelho02, OUTPUT);
+  pinMode(pinAmarelo02, OUTPUT);
+  pinMode(pinVerde02, OUTPUT);
+  
+  pinMode(pinVermelhoPedestre02, OUTPUT);
+  pinMode(pinVerdePedestre02, OUTPUT);  
+
+  //faseSemafaro = 1;
+  
+
+  estadoAnteriorBotao = digitalRead(pinBotao);
+
+  tempoPisca = 0;
+  estadoPisca = HIGH; 
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+  estadoBotao = digitalRead(pinBotao);
+
+  if ((estadoBotao == HIGH) && (estadoAnteriorBotao == LOW)) {
+
+    if (faseSemafaro < 4) {
+       faseSemafaro = faseSemafaro + 1;             
+    } else {
+           faseSemafaro = 1;           
+    }
+     
+    
+  }
+
+  estadoAnteriorBotao = estadoBotao;
+
+  if (faseSemafaro == 1) {
+      digitalWrite(pinVerde, HIGH);
+      digitalWrite(pinAmarelo, LOW);
+      digitalWrite(pinVermelho, LOW);
+
+      digitalWrite(pinVerdePedestre, LOW);
+      digitalWrite(pinVermelhoPedestre, HIGH);
+      
+      //semafaro 02 
+      digitalWrite(pinVerde02, LOW);
+      digitalWrite(pinAmarelo02, LOW);
+      digitalWrite(pinVermelho02, HIGH);
+
+      digitalWrite(pinVerdePedestre02, HIGH);
+      digitalWrite(pinVermelhoPedestre02, LOW);
+           
+    
+  }
+
+  if (faseSemafaro == 2) {
+      digitalWrite(pinVerde, LOW);
+      digitalWrite(pinAmarelo, HIGH);
+      digitalWrite(pinVermelho, LOW);
+      
+      digitalWrite(pinVerdePedestre, LOW);
+      digitalWrite(pinVermelhoPedestre, HIGH); 
+
+       //semafaro 02 
+      digitalWrite(pinVerde02, LOW);
+      digitalWrite(pinAmarelo02, LOW);
+      digitalWrite(pinVermelho02, HIGH);
+
+      tempoPisca = tempoPisca + 1;
+      if (tempoPisca == 400) {
+          estadoPisca = !estadoPisca;
+          tempoPisca = 0;          
+      }
+
+      digitalWrite(pinVerdePedestre02, LOW);
+      digitalWrite(pinVermelhoPedestre02, estadoPisca);          
+    
+  }
+  if (faseSemafaro == 3) {
+      digitalWrite(pinVerde, LOW);
+      digitalWrite(pinAmarelo, LOW);
+      digitalWrite(pinVermelho, HIGH); 
+
+      digitalWrite(pinVerdePedestre, HIGH);
+      digitalWrite(pinVermelhoPedestre, LOW);
+      
+ //semafaro 02 
+      digitalWrite(pinVerde02, HIGH);
+      digitalWrite(pinAmarelo02, LOW);
+      digitalWrite(pinVermelho02, LOW);
+
+      digitalWrite(pinVerdePedestre02, LOW);
+      digitalWrite(pinVermelhoPedestre02, HIGH);          
+    
+  }if (faseSemafaro == 4) {  //semafaro pedestre piscando
+      digitalWrite(pinVerde, LOW);
+      digitalWrite(pinAmarelo, LOW);
+      digitalWrite(pinVermelho, HIGH); 
+
+      tempoPisca = tempoPisca + 1;
+      if (tempoPisca == 400) {
+          estadoPisca = !estadoPisca;
+          tempoPisca = 0;          
+      }
+
+      digitalWrite(pinVerdePedestre, LOW);
+      digitalWrite(pinVermelhoPedestre, estadoPisca); 
+
+      //semafaro 02 
+      digitalWrite(pinVerde02, LOW);
+      digitalWrite(pinAmarelo02, HIGH);
+      digitalWrite(pinVermelho02, LOW);
+
+      digitalWrite(pinVerdePedestre02, LOW);
+      digitalWrite(pinVermelhoPedestre02, HIGH);   
+
+  } 
+
+  delay(1);
+}
