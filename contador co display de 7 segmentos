@@ -1,0 +1,183 @@
+int SEGC = 13;
+int PONTO = 12;
+int SEGF = 11;
+int SEGA = 10;
+int SEGB = 9;
+int SEGD = 8;
+int SEGE = 7;
+int SEGG = 6;
+
+
+   
+void setup()
+{
+  pinMode (SEGA, OUTPUT);
+  pinMode (SEGB, OUTPUT);
+  pinMode (SEGC, OUTPUT);
+  pinMode (SEGD, OUTPUT); 
+  pinMode (SEGE, OUTPUT);
+  pinMode (SEGF, OUTPUT); 
+  pinMode (SEGG, OUTPUT);
+  pinMode (PONTO, OUTPUT); 
+}
+
+void loop()
+{
+  //teste de seguimentos
+  
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, HIGH);
+  digitalWrite(SEGF, HIGH);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, HIGH);
+  delay(1000);
+  
+  
+  digitalWrite(SEGA, LOW);
+  digitalWrite(SEGB, LOW);
+  digitalWrite(SEGC, LOW);
+  digitalWrite(SEGD, LOW);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, LOW);
+  digitalWrite(SEGG, LOW);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR PONTO .
+  digitalWrite(SEGA, LOW);
+  digitalWrite(SEGB, LOW);
+  digitalWrite(SEGC, LOW);
+  digitalWrite(SEGD, LOW);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, LOW);
+  digitalWrite(SEGG, LOW);
+  digitalWrite(PONTO, HIGH);
+  delay(1000);
+  
+  // MOSTRAR NUMERO 0
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, HIGH);
+  digitalWrite(SEGF, HIGH);
+  digitalWrite(SEGG, LOW);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 1
+  digitalWrite(SEGA, LOW);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, LOW);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, LOW);
+  digitalWrite(SEGG, LOW);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 2
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, LOW);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, HIGH);
+  digitalWrite(SEGF, LOW);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 3
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, LOW);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 4
+  digitalWrite(SEGA, LOW);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, LOW);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, HIGH);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 5
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, LOW);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, HIGH);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 6
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, LOW);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, HIGH);
+  digitalWrite(SEGF, HIGH);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 7
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, LOW);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, LOW);
+  digitalWrite(SEGG, LOW);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 8
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, HIGH);
+  digitalWrite(SEGF, HIGH);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR NUMERO 9
+  digitalWrite(SEGA, HIGH);
+  digitalWrite(SEGB, HIGH);
+  digitalWrite(SEGC, HIGH);
+  digitalWrite(SEGD, HIGH);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, HIGH);
+  digitalWrite(SEGG, HIGH);
+  digitalWrite(PONTO, LOW);
+  delay(1000);
+  
+   // MOSTRAR PONTO .
+  digitalWrite(SEGA, LOW);
+  digitalWrite(SEGB, LOW);
+  digitalWrite(SEGC, LOW);
+  digitalWrite(SEGD, LOW);
+  digitalWrite(SEGE, LOW);
+  digitalWrite(SEGF, LOW);
+  digitalWrite(SEGG, LOW);
+  digitalWrite(PONTO, HIGH);
+  delay(1000);
+  
+
+  
+}
